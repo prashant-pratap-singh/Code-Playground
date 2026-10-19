@@ -26,7 +26,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         const newUser = await db.user.create({
           data: {
             email: user.email!,
-            name: user.name,
+            name: user.name ?? "",
             image: user.image,
            
             accounts: {
